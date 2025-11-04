@@ -47,5 +47,15 @@ class TestWeb(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Current Shipments', response.data)
 
+    def test_tools_page(self):
+        response = self.app.get('/tools')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Logistics Tools', response.data)
+
+    def test_companies_page(self):
+        response = self.app.get('/companies')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Global Transport Companies', response.data)
+
 if __name__ == '__main__':
     unittest.main()

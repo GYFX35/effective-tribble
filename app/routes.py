@@ -10,6 +10,14 @@ def index():
 def shipments():
     return render_template('shipments.html')
 
+@app.route('/tools')
+def tools():
+    return render_template('tools.html')
+
+@app.route('/companies')
+def companies():
+    return render_template('companies.html')
+
 @app.route('/api/shipments', methods=['GET'])
 def get_shipments():
     """
