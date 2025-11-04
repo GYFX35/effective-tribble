@@ -1,10 +1,14 @@
 from app import app
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Welcome to the Global Logistics and Transport Software!"
+    return render_template('index.html')
+
+@app.route('/shipments')
+def shipments():
+    return render_template('shipments.html')
 
 @app.route('/api/shipments', methods=['GET'])
 def get_shipments():
@@ -35,6 +39,9 @@ def optimal_route():
     API endpoint to get the optimal route for a shipment.
     """
     data = request.get_json()
+    if not data:
+        return jsonify({'error': 'Invalid JSON payload.'}), 400
+
     origin = data.get('origin')
     destination = data.get('destination')
 
