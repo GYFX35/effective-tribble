@@ -37,3 +37,17 @@ This project is a global logistics and transport software designed to assist tra
    python3 run.py
    ```
 2. Open your web browser and navigate to `http://127.0.0.1:5000` to view the application.
+
+### Deployment
+
+This application is ready to be deployed using Docker.
+
+1. Build the Docker image:
+   ```bash
+   docker build -t logistics-app .
+   ```
+2. Run the Docker container:
+   ```bash
+   docker run -p 8000:8000 logistics-app
+   ```
+3. Open your web browser and navigate to `http://localhost:8000` to view the application.
