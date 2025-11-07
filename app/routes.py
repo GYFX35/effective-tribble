@@ -18,6 +18,10 @@ def tools():
 def companies():
     return render_template('companies.html')
 
+@app.route('/assistance')
+def assistance():
+    return render_template('assistance.html')
+
 @app.route('/api/shipments', methods=['GET'])
 def get_shipments():
     """
