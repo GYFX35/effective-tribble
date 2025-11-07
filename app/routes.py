@@ -22,6 +22,10 @@ def companies():
 def assistance():
     return render_template('assistance.html')
 
+@app.route('/astronomy')
+def astronomy():
+    return render_template('astronomy.html')
+
 @app.route('/api/shipments', methods=['GET'])
 def get_shipments():
     """
